@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Музыка</title>
+    <style>
+        body {
+            margin: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+
+    <audio id="audio" src="k.mp3"></audio>
+
+    <script>
+        document.body.addEventListener("click", function() {
+            let audio = document.getElementById("audio");
+            audio.volume = 1.0; // Максимальная громкость
+            audio.play().catch(error => console.error("Ошибка воспроизведения:", error));
+        });
+    </script>
+
+</body>
+</html>
