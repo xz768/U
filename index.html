@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="manifest" href="manifest.json">
+    <title>Музыка</title>
+    <style>
+        body {
+            background: black; 
+            margin: 0; 
+            width: 100vw; 
+            height: 100vh; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center;
+        }
+        .btn {
+            width: 100px;
+            height: 100px;
+            background: red;
+            border-radius: 50%;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <button class="btn" id="playButton"></button>
+
+    <script>
+        let audio = new Audio("k.mp3");
+        audio.loop = true;
+        audio.volume = 1.0; // Максимальная громкость
+
+        document.getElementById("playButton").addEventListener("click", function() {
+            audio.play().catch(error => console.log("Ошибка воспроизведения:", error));
+            this.style.display = "none"; // Кнопка исчезает после нажатия
+        });
+    </script>
+
+</body>
+</html>
